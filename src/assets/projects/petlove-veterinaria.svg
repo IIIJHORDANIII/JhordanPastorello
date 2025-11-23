@@ -1,0 +1,48 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#a855f7" opacity="0.1"/>
+  
+  <!-- Dog -->
+  <ellipse cx="120" cy="120" rx="40" ry="30" fill="#a855f7" opacity="0.7"/>
+  <circle cx="100" cy="110" r="8" fill="#7c3aed"/>
+  <circle cx="140" cy="110" r="8" fill="#7c3aed"/>
+  <ellipse cx="120" cy="125" rx="5" ry="8" fill="#7c3aed"/>
+  <ellipse cx="80" cy="120" rx="15" ry="12" fill="#a855f7" opacity="0.7"/>
+  <ellipse cx="160" cy="120" rx="15" ry="12" fill="#a855f7" opacity="0.7"/>
+  
+  <!-- Cat -->
+  <ellipse cx="250" cy="100" rx="30" ry="25" fill="#a855f7" opacity="0.7"/>
+  <path d="M230 95 L235 85 L240 95" fill="#7c3aed"/>
+  <path d="M260 95 L265 85 L270 95" fill="#7c3aed"/>
+  <circle cx="240" cy="100" r="4" fill="#7c3aed"/>
+  <circle cx="260" cy="100" r="4" fill="#7c3aed"/>
+  <ellipse cx="250" cy="105" rx="3" ry="5" fill="#7c3aed"/>
+  <path d="M250 110 L245 120 L250 115 L255 120 Z" fill="#7c3aed"/>
+  
+  <!-- Veterinary Cross/Medical -->
+  <rect x="180" y="180" width="40" height="40" rx="5" fill="none" stroke="#a855f7" stroke-width="3"/>
+  <line x1="200" y1="190" x2="200" y2="210" stroke="#a855f7" stroke-width="3"/>
+  <line x1="190" y1="200" x2="210" y2="200" stroke="#a855f7" stroke-width="3"/>
+  
+  <!-- Social Media Icons -->
+  <rect x="80" y="200" width="50" height="50" rx="12" fill="none" stroke="#a855f7" stroke-width="2"/>
+  <circle cx="105" cy="225" r="10" fill="none" stroke="#a855f7" stroke-width="1.5"/>
+  <circle cx="120" cy="210" r="3" fill="#a855f7"/>
+  
+  <!-- TikTok Icon -->
+  <rect x="150" y="200" width="30" height="50" rx="3" fill="none" stroke="#a855f7" stroke-width="2"/>
+  <path d="M165 210 L175 220 L165 230" stroke="#a855f7" stroke-width="2" fill="none"/>
+  
+  <!-- Growth Stats -->
+  <path d="M50 250 L100 250 L90 230 M100 250 L90 270" stroke="#7c3aed" stroke-width="4" fill="none"/>
+  <text x="110" y="255" font-family="Arial" font-size="16" fill="#7c3aed" font-weight="bold">+180%</text>
+  
+  <!-- Reach -->
+  <circle cx="250" cy="220" r="12" fill="#a855f7" opacity="0.7"/>
+  <circle cx="280" cy="220" r="12" fill="#a855f7" opacity="0.7"/>
+  <circle cx="310" cy="220" r="12" fill="#a855f7" opacity="0.7"/>
+  <text x="330" y="225" font-family="Arial" font-size="12" fill="#a855f7" font-weight="bold">1.2M</text>
+  
+  <!-- Heart (Care) -->
+  <path d="M320 100 Q320 80 340 80 Q360 80 360 100 Q360 120 340 140 L320 160 L300 140 Q280 120 280 100 Q280 80 300 80 Q320 80 320 100" fill="#a855f7" opacity="0.6"/>
+</svg>

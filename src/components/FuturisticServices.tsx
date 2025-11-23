@@ -103,14 +103,6 @@ const FuturisticServices = () => {
             </div>
           ))}
         </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <button className="neon-button group">
-            <span className="relative z-10">Ver Todos os Serviços</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </button>
-        </div>
       </div>
 
       <style jsx>{`

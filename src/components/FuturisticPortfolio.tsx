@@ -1,11 +1,18 @@
 import { useState } from 'react';
-import { ExternalLink, TrendingUp, Users, Target, ArrowRight } from 'lucide-react';
+import { ExternalLink, TrendingUp, Users, Target } from 'lucide-react';
+import ecovidaImage from '../assets/projects/ecovida-organicos.svg';
+import techstartImage from '../assets/projects/techstart-academy.svg';
+import belezaImage from '../assets/projects/beleza-natural.svg';
+import fitproImage from '../assets/projects/fitpro-suplementos.svg';
+import advocaciaImage from '../assets/projects/advocacia-santos-silva.svg';
+import petloveImage from '../assets/projects/petlove-veterinaria.svg';
 
 const projects = [
   {
     title: "EcoVida Orgânicos",
     category: "Social Media + Tráfego",
     description: "Campanha completa para e-commerce de produtos orgânicos, resultando em 300% de aumento em vendas online.",
+    image: ecovidaImage,
     metrics: [
       { icon: TrendingUp, label: "ROI", value: "450%" },
       { icon: Users, label: "Alcance", value: "2.5M" },
@@ -19,6 +26,7 @@ const projects = [
     title: "TechStart Academy",
     category: "Landing Page",
     description: "Landing page de alta conversão para curso online de programação, com funil de vendas otimizado.",
+    image: techstartImage,
     metrics: [
       { icon: TrendingUp, label: "Conversão", value: "12.3%" },
       { icon: Users, label: "Leads", value: "15K" },
@@ -32,6 +40,7 @@ const projects = [
     title: "Beleza Natural",
     category: "Social Media Design",
     description: "Identidade visual e conteúdo para rede de salões, crescimento de 500% no Instagram em 6 meses.",
+    image: belezaImage,
     metrics: [
       { icon: Users, label: "Seguidores", value: "+85K" },
       { icon: TrendingUp, label: "Engajamento", value: "9.2%" },
@@ -45,6 +54,7 @@ const projects = [
     title: "FitPro Suplementos",
     category: "Tráfego Pago",
     description: "Estratégia de anúncios para loja de suplementos, otimização de CAC e aumento de ticket médio.",
+    image: fitproImage,
     metrics: [
       { icon: TrendingUp, label: "ROAS", value: "6.8x" },
       { icon: Target, label: "CAC", value: "-45%" },
@@ -58,6 +68,7 @@ const projects = [
     title: "Advocacia Santos & Silva",
     category: "Landing Page + Tráfego",
     description: "Landing page institucional com captação de leads qualificados via Google Ads e LinkedIn.",
+    image: advocaciaImage,
     metrics: [
       { icon: Users, label: "Leads", value: "892" },
       { icon: Target, label: "Qualificados", value: "67%" },
@@ -71,6 +82,7 @@ const projects = [
     title: "PetLove Veterinária",
     category: "Social Media + Design",
     description: "Conteúdo educativo e campanhas de conscientização, construindo autoridade e fidelização.",
+    image: petloveImage,
     metrics: [
       { icon: Users, label: "Alcance", value: "1.2M" },
       { icon: TrendingUp, label: "Salvamentos", value: "45K" },
@@ -122,6 +134,16 @@ const FuturisticPortfolio = () => {
             >
               {/* Background Gradient */}
               <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-300`} />
+              
+              {/* Project Image */}
+              <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-300 overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover object-center"
+                  style={{ filter: 'blur(1px)' }}
+                />
+              </div>
               
               {/* Content */}
               <div className="relative z-10 h-full flex flex-col justify-between p-6">
@@ -177,15 +199,6 @@ const FuturisticPortfolio = () => {
               <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-30 transition-opacity duration-300 pointer-events-none`} />
             </div>
           ))}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <button className="neon-button group">
-            <span className="relative z-10">Ver Mais Projetos</span>
-            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </button>
         </div>
       </div>
 

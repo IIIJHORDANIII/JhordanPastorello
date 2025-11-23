@@ -1,0 +1,38 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#ec4899" opacity="0.1"/>
+  
+  <!-- Scissors -->
+  <path d="M100 80 L120 100 L110 110 L90 90 Z" fill="#ec4899" opacity="0.8"/>
+  <path d="M120 100 L140 80 L130 70 L110 90 Z" fill="#ec4899" opacity="0.8"/>
+  <circle cx="120" cy="100" r="5" fill="#f43f5e"/>
+  
+  <!-- Hair Dryer -->
+  <rect x="180" y="90" width="60" height="30" rx="15" fill="none" stroke="#ec4899" stroke-width="3"/>
+  <circle cx="200" cy="105" r="8" fill="#ec4899" opacity="0.6"/>
+  <rect x="230" y="100" width="20" height="20" rx="3" fill="#ec4899" opacity="0.4"/>
+  
+  <!-- Mirror -->
+  <ellipse cx="280" cy="100" rx="40" ry="50" fill="none" stroke="#ec4899" stroke-width="3"/>
+  <ellipse cx="280" cy="100" rx="30" ry="40" fill="#ec4899" opacity="0.2"/>
+  
+  <!-- Instagram Icon -->
+  <rect x="80" y="180" width="60" height="60" rx="12" fill="none" stroke="#ec4899" stroke-width="3"/>
+  <circle cx="110" cy="210" r="12" fill="none" stroke="#ec4899" stroke-width="2"/>
+  <circle cx="125" cy="195" r="3" fill="#ec4899"/>
+  
+  <!-- Growth Stats -->
+  <path d="M50 250 L100 250 L90 230 M100 250 L90 270" stroke="#f43f5e" stroke-width="4" fill="none"/>
+  <text x="110" y="255" font-family="Arial" font-size="16" fill="#f43f5e" font-weight="bold">500%</text>
+  
+  <!-- Followers -->
+  <circle cx="200" cy="200" r="12" fill="#ec4899" opacity="0.7"/>
+  <circle cx="220" cy="200" r="12" fill="#ec4899" opacity="0.7"/>
+  <circle cx="240" cy="200" r="12" fill="#ec4899" opacity="0.7"/>
+  <text x="260" y="205" font-family="Arial" font-size="14" fill="#ec4899" font-weight="bold">+85K</text>
+  
+  <!-- Beauty Products -->
+  <rect x="280" y="180" width="20" height="30" rx="3" fill="#ec4899" opacity="0.6"/>
+  <rect x="310" y="185" width="20" height="25" rx="3" fill="#f43f5e" opacity="0.6"/>
+  <circle cx="340" cy="200" r="10" fill="#ec4899" opacity="0.6"/>
+</svg>

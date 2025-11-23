@@ -1,0 +1,32 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#10b981" opacity="0.1"/>
+  
+  <!-- Organic Leaf 1 -->
+  <path d="M80 120 Q100 80 120 100 Q140 120 120 140 Q100 160 80 140 Q60 120 80 120" fill="#10b981" opacity="0.8"/>
+  
+  <!-- Organic Leaf 2 -->
+  <path d="M150 100 Q170 60 190 80 Q210 100 190 120 Q170 140 150 120 Q130 100 150 100" fill="#059669" opacity="0.8"/>
+  
+  <!-- Shopping Cart -->
+  <rect x="200" y="140" width="80" height="60" rx="5" fill="none" stroke="#10b981" stroke-width="3"/>
+  <circle cx="220" cy="180" r="8" fill="#10b981"/>
+  <circle cx="260" cy="180" r="8" fill="#10b981"/>
+  <rect x="210" y="150" width="20" height="15" rx="2" fill="#10b981" opacity="0.6"/>
+  <rect x="250" y="150" width="20" height="15" rx="2" fill="#10b981" opacity="0.6"/>
+  
+  <!-- Organic Products -->
+  <circle cx="280" cy="100" r="15" fill="#10b981" opacity="0.7"/>
+  <circle cx="310" cy="110" r="12" fill="#059669" opacity="0.7"/>
+  <circle cx="330" cy="90" r="10" fill="#10b981" opacity="0.7"/>
+  
+  <!-- Growth Arrow -->
+  <path d="M50 200 L100 200 L90 180 M100 200 L90 220" stroke="#10b981" stroke-width="4" fill="none"/>
+  <text x="110" y="205" font-family="Arial" font-size="16" fill="#10b981" font-weight="bold">300%</text>
+  
+  <!-- E-commerce Icon -->
+  <rect x="250" y="200" width="100" height="60" rx="5" fill="none" stroke="#10b981" stroke-width="2"/>
+  <line x1="260" y1="220" x2="340" y2="220" stroke="#10b981" stroke-width="2"/>
+  <line x1="260" y1="240" x2="320" y2="240" stroke="#10b981" stroke-width="1" opacity="0.6"/>
+  <line x1="260" y1="250" x2="300" y2="250" stroke="#10b981" stroke-width="1" opacity="0.6"/>
+</svg>

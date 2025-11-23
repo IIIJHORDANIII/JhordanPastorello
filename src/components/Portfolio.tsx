@@ -1,12 +1,19 @@
 import { ExternalLink, TrendingUp, Users, Target } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
+import ecovidaImage from '../assets/projects/ecovida-organicos.svg';
+import techstartImage from '../assets/projects/techstart-academy.svg';
+import belezaImage from '../assets/projects/beleza-natural.svg';
+import fitproImage from '../assets/projects/fitpro-suplementos.svg';
+import advocaciaImage from '../assets/projects/advocacia-santos-silva.svg';
+import petloveImage from '../assets/projects/petlove-veterinaria.svg';
 
 const projects = [
   {
     title: "EcoVida Orgânicos",
     category: "Social Media + Tráfego",
     description: "Campanha completa para e-commerce de produtos orgânicos, resultando em 300% de aumento em vendas online.",
+    image: ecovidaImage,
     metrics: [
       { icon: TrendingUp, label: "ROI", value: "450%" },
       { icon: Users, label: "Alcance", value: "2.5M" },
@@ -19,6 +26,7 @@ const projects = [
     title: "TechStart Academy",
     category: "Landing Page",
     description: "Landing page de alta conversão para curso online de programação, com funil de vendas otimizado.",
+    image: techstartImage,
     metrics: [
       { icon: TrendingUp, label: "Conversão", value: "12.3%" },
       { icon: Users, label: "Leads", value: "15K" },
@@ -31,6 +39,7 @@ const projects = [
     title: "Beleza Natural",
     category: "Social Media Design",
     description: "Identidade visual e conteúdo para rede de salões, crescimento de 500% no Instagram em 6 meses.",
+    image: belezaImage,
     metrics: [
       { icon: Users, label: "Seguidores", value: "+85K" },
       { icon: TrendingUp, label: "Engajamento", value: "9.2%" },
@@ -43,6 +52,7 @@ const projects = [
     title: "FitPro Suplementos",
     category: "Tráfego Pago",
     description: "Estratégia de anúncios para loja de suplementos, otimização de CAC e aumento de ticket médio.",
+    image: fitproImage,
     metrics: [
       { icon: TrendingUp, label: "ROAS", value: "6.8x" },
       { icon: Target, label: "CAC", value: "-45%" },
@@ -55,6 +65,7 @@ const projects = [
     title: "Advocacia Santos & Silva",
     category: "Landing Page + Tráfego",
     description: "Landing page institucional com captação de leads qualificados via Google Ads e LinkedIn.",
+    image: advocaciaImage,
     metrics: [
       { icon: Users, label: "Leads", value: "892" },
       { icon: Target, label: "Qualificados", value: "67%" },
@@ -67,6 +78,7 @@ const projects = [
     title: "PetLove Veterinária",
     category: "Social Media + Design",
     description: "Conteúdo educativo e campanhas de conscientização, construindo autoridade e fidelização.",
+    image: petloveImage,
     metrics: [
       { icon: Users, label: "Alcance", value: "1.2M" },
       { icon: TrendingUp, label: "Salvamentos", value: "45K" },
@@ -94,12 +106,21 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <Card
               key={project.title}
-              className="card-gradient border-border/50 hover-glow group cursor-pointer animate-scale-in overflow-hidden"
+              className="card-gradient border-border/50 hover-glow group cursor-pointer animate-scale-in overflow-hidden relative"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className={`h-2 bg-gradient-to-r ${project.gradient}`} />
               
-              <CardHeader>
+              {/* Project Image Background */}
+              <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300 overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+              
+              <CardHeader className="relative z-10">
                 <div className="flex items-start justify-between mb-2">
                   <Badge variant="secondary" className="text-xs">
                     {project.category}
@@ -116,7 +137,7 @@ const Portfolio = () => {
                 </CardDescription>
               </CardHeader>
 
-              <CardContent>
+              <CardContent className="relative z-10">
                 <div className="grid grid-cols-3 gap-4 mb-4 pb-4 border-b border-border/50">
                   {project.metrics.map((metric) => (
                     <div key={metric.label} className="text-center">

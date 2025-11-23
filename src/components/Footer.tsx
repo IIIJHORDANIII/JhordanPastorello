@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, Mail } from "lucide-react";
+import { Instagram, Linkedin, MessageSquare } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -26,10 +26,12 @@ const Footer = () => {
               <Linkedin className="w-5 h-5" />
             </a>
             <a 
-              href="mailto:pastorellojhordan@gmail.com" 
+              href="https://wa.me/5547996772336" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-12 h-12 rounded-full bg-card border border-border/50 flex items-center justify-center hover:bg-primary hover:text-background transition-all duration-300 hover-glow"
             >
-              <Mail className="w-5 h-5" />
+              <MessageSquare className="w-5 h-5" />
             </a>
           </div>
 

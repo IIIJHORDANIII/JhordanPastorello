@@ -26,6 +26,7 @@ const FuturisticCTA = () => {
   const [isFormComplete, setIsFormComplete] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
   const whatsappNumber = '5547996772336'; // Seu número de WhatsApp
   // Configure sua API endpoint aqui (ex: Evolution API, WhatsApp Cloud API, ou seu próprio backend)
   const whatsappApiUrl = import.meta.env.VITE_WHATSAPP_API_URL || ''; // Opcional: URL da API
@@ -48,7 +49,10 @@ const FuturisticCTA = () => {
   }, [formData]);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    // Rola apenas o container do chat, não a página inteira
+    if (messagesContainerRef.current) {
+      messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -238,7 +242,7 @@ const FuturisticCTA = () => {
               </div>
 
               {/* Messages Area */}
-              <div className="flex-1 overflow-y-auto mb-6 space-y-4 pr-2 chat-scroll">
+              <div ref={messagesContainerRef} className="flex-1 overflow-y-auto mb-6 space-y-4 pr-2 chat-scroll">
                 {messages.map((message) => (
                   <div
                     key={message.id}

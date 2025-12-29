@@ -1,7 +1,7 @@
 /* Futuristic Minimalist Design System */
 
 :root {
-  /* Futuristic Color Palette */
+  /* Futuristic Color Palette - Dark Theme */
   --bg-primary: #0A0A0A;
   --bg-secondary: #141414;
   --text-primary: #E0E0E0;
@@ -32,6 +32,32 @@
   /* Animations */
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.light {
+  /* Futuristic Color Palette - Light Theme */
+  --bg-primary: #FAFAFA;
+  --bg-secondary: #F5F5F5;
+  --text-primary: #1A1A1A;
+  --text-secondary: #4A4A4A;
+  --neon-cyan: #00B8E6;
+  --neon-orange: #FF7A4D;
+  --neon-purple: #8B5CF6;
+  --glass-bg: rgba(0, 0, 0, 0.03);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --glass-blur: blur(20px);
+  
+  /* Gradients Light */
+  --gradient-primary: linear-gradient(135deg, #00B8E6, #00A3CC);
+  --gradient-secondary: linear-gradient(135deg, #FF7A4D, #FF8C5C);
+  --gradient-accent: linear-gradient(135deg, #8B5CF6, #A78BFA);
+  --gradient-glass: linear-gradient(135deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.01));
+  
+  /* Shadows Light */
+  --shadow-neon: 0 0 20px rgba(0, 184, 230, 0.25);
+  --shadow-neon-orange: 0 0 20px rgba(255, 122, 77, 0.25);
+  --shadow-neon-purple: 0 0 20px rgba(139, 92, 246, 0.25);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 /* Custom Cursor */
@@ -128,6 +154,13 @@
   position: relative;
 }
 
+.light .futuristic-bg {
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(0, 184, 230, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 122, 77, 0.05) 0%, transparent 50%),
+    linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
 .futuristic-bg::before {
   content: '';
   position: fixed;
@@ -141,6 +174,12 @@
   background-size: 50px 50px;
   pointer-events: none;
   z-index: -1;
+}
+
+.light .futuristic-bg::before {
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
 }
 
 /* Side Navigation */
@@ -273,6 +312,10 @@
   z-index: 1001;
 }
 
+.light .scroll-progress {
+  background: rgba(0, 0, 0, 0.1);
+}
+
 .scroll-progress-bar {
   height: 100%;
   background: var(--gradient-primary);
@@ -301,14 +344,26 @@
   text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
 }
 
+.light .text-neon-cyan {
+  text-shadow: 0 0 10px rgba(0, 184, 230, 0.3);
+}
+
 .text-neon-orange {
   color: var(--neon-orange);
   text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
 }
 
+.light .text-neon-orange {
+  text-shadow: 0 0 10px rgba(255, 122, 77, 0.3);
+}
+
 .text-neon-purple {
   color: var(--neon-purple);
   text-shadow: 0 0 10px rgba(124, 58, 237, 0.5);
+}
+
+.light .text-neon-purple {
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
 }
 
 .bg-glass {
@@ -320,6 +375,78 @@
 .border-neon {
   border: 1px solid var(--neon-cyan);
   box-shadow: var(--shadow-neon);
+}
+
+/* Theme-aware background utilities */
+.bg-glass-overlay {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.light .bg-glass-overlay {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.bg-glass-overlay-light {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.light .bg-glass-overlay-light {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.border-glass-overlay {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.light .border-glass-overlay {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Override Tailwind bg-white/ classes for light theme */
+.light [class*="bg-white/10"] {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.light [class*="bg-white/5"] {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+.light [class*="border-white/20"] {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light [class*="border-white/10"] {
+  border-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.light [class*="text-white"]:not([class*="bg-gradient"]) {
+  color: var(--text-primary) !important;
+}
+
+.light [class*="placeholder-gray-400"]::placeholder {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.light [class*="bg-gray-900"] {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Lighten blur effects in light theme */
+.light [class*="bg-cyan-500"][class*="blur-3xl"] {
+  opacity: 0.03 !important;
+}
+
+.light [class*="bg-orange-500"][class*="blur-3xl"] {
+  opacity: 0.03 !important;
+}
+
+.light [class*="bg-purple-500"][class*="blur-3xl"] {
+  opacity: 0.03 !important;
+}
+
+.light [class*="bg-blue-500"][class*="blur-3xl"] {
+  opacity: 0.03 !important;
 }
 
 /* Loading Animation */

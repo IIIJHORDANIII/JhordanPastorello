@@ -90,8 +90,8 @@ const SideNavigation = () => {
         
         .nav-dot:hover,
         .nav-dot.active {
-          background: #00D4FF;
-          box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+          background: var(--neon-cyan);
+          box-shadow: var(--shadow-neon);
           transform: scale(1.2);
         }
         
@@ -101,7 +101,7 @@ const SideNavigation = () => {
           left: 24px;
           top: 50%;
           transform: translateY(-50%);
-          color: #E0E0E0;
+          color: var(--text-primary);
           font-family: 'JetBrains Mono', monospace;
           font-size: 12px;
           white-space: nowrap;

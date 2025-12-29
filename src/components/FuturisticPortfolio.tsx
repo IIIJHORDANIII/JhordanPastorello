@@ -207,43 +207,47 @@ const FuturisticPortfolio = () => {
           font-family: 'JetBrains Mono', monospace;
           font-weight: 900;
           letter-spacing: -0.02em;
-          background: linear-gradient(135deg, #00D4FF, #0099CC);
+          background: var(--gradient-primary);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
           text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
         }
         
+        .light .futuristic-title {
+          text-shadow: 0 0 30px rgba(0, 136, 204, 0.2);
+        }
+        
         .text-text-primary {
-          color: #E0E0E0;
+          color: var(--text-primary);
         }
         
         .text-text-secondary {
-          color: #A0A0A0;
+          color: var(--text-secondary);
         }
         
         .glass-card {
-          background: rgba(255, 255, 255, 0.05);
-          backdrop-filter: blur(20px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: var(--glass-bg);
+          backdrop-filter: var(--glass-blur);
+          border: 1px solid var(--glass-border);
           border-radius: 16px;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+          box-shadow: var(--shadow-glass);
           transition: all 0.3s ease;
           position: relative;
           overflow: hidden;
         }
         
         .glass-card:hover {
-          border-color: #00D4FF;
-          box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+          border-color: var(--neon-cyan);
+          box-shadow: var(--shadow-neon);
           transform: translateY(-4px);
         }
         
         .neon-button {
           position: relative;
           background: transparent;
-          border: 2px solid #00D4FF;
-          color: #00D4FF;
+          border: 2px solid var(--neon-cyan);
+          color: var(--neon-cyan);
           padding: 16px 32px;
           border-radius: 8px;
           font-family: 'JetBrains Mono', monospace;
@@ -257,9 +261,9 @@ const FuturisticPortfolio = () => {
         }
         
         .neon-button:hover {
-          background: #00D4FF;
-          color: #0A0A0A;
-          box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+          background: var(--neon-cyan);
+          color: var(--bg-primary);
+          box-shadow: var(--shadow-neon);
         }
       `}</style>
     </section>

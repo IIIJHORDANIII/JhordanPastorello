@@ -43,7 +43,7 @@ const FuturisticHero = () => {
       </div>
 
       {/* Grid Pattern */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-20 hero-grid-pattern">
         <div className="w-full h-full" style={{
           backgroundImage: `
             linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px),
@@ -52,6 +52,13 @@ const FuturisticHero = () => {
           backgroundSize: '50px 50px'
         }} />
       </div>
+      <style jsx>{`
+        .light .hero-grid-pattern div {
+          background-image: 
+            linear-gradient(rgba(0, 184, 230, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 184, 230, 0.05) 1px, transparent 1px) !important;
+        }
+      `}</style>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
@@ -121,22 +128,26 @@ const FuturisticHero = () => {
           font-family: 'JetBrains Mono', monospace;
           font-weight: 900;
           letter-spacing: -0.02em;
-          background: linear-gradient(135deg, #00D4FF, #0099CC);
+          background: var(--gradient-primary);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
           text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
         }
         
+        .light .futuristic-title {
+          text-shadow: 0 0 30px rgba(0, 136, 204, 0.2);
+        }
+        
         .text-text-secondary {
-          color: #A0A0A0;
+          color: var(--text-secondary);
         }
         
         .neon-button {
           position: relative;
           background: transparent;
-          border: 2px solid #00D4FF;
-          color: #00D4FF;
+          border: 2px solid var(--neon-cyan);
+          color: var(--neon-cyan);
           padding: 16px 32px;
           border-radius: 8px;
           font-family: 'JetBrains Mono', monospace;
@@ -148,9 +159,9 @@ const FuturisticHero = () => {
         }
         
         .neon-button:hover {
-          background: #00D4FF;
-          color: #0A0A0A;
-          box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+          background: var(--neon-cyan);
+          color: var(--bg-primary);
+          box-shadow: var(--shadow-neon);
         }
         
         @keyframes fadeInUp {

@@ -30,13 +30,17 @@ const FuturisticIndex = () => {
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;900&family=Inter:wght@400;500;600;700;900&display=swap');
         
         :root {
-          --background: #0A0A0A;
-          --text-primary: #E0E0E0;
-          --text-secondary: #A0A0A0;
-          --accent-cyan: #00D4FF;
-          --accent-purple: #7B3FF2;
-          --accent-orange: #FF6B35;
+          --background: var(--bg-primary);
+          --text-primary: var(--text-primary);
+          --text-secondary: var(--text-secondary);
+          --accent-cyan: var(--neon-cyan);
+          --accent-purple: var(--neon-purple);
+          --accent-orange: var(--neon-orange);
           --accent-green: #00FF88;
+        }
+        
+        .light {
+          --accent-green: #00CC6A;
         }
         
         * {
@@ -82,6 +86,10 @@ const FuturisticIndex = () => {
           background: rgba(255, 255, 255, 0.1);
         }
         
+        .light ::-webkit-scrollbar-track {
+          background: rgba(0, 0, 0, 0.05);
+        }
+        
         ::-webkit-scrollbar-thumb {
           background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
           border-radius: 4px;
@@ -94,6 +102,11 @@ const FuturisticIndex = () => {
         /* Selection color */
         ::selection {
           background: rgba(0, 212, 255, 0.3);
+          color: var(--text-primary);
+        }
+        
+        .light ::selection {
+          background: rgba(0, 136, 204, 0.2);
           color: var(--text-primary);
         }
         

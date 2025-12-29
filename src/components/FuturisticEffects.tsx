@@ -116,7 +116,7 @@ const FuturisticEffects = () => {
       </div>
 
       {/* Scroll Progress Indicator */}
-      <div className="fixed top-0 left-0 w-full h-1 z-40 bg-black/20">
+      <div className="fixed top-0 left-0 w-full h-1 z-40 bg-black/20 scroll-progress-bg">
         <div 
           className="h-full bg-gradient-to-r from-cyan-400 via-purple-500 to-orange-400 transition-all duration-300 ease-out"
           style={{ width: `${scrollProgress}%` }}
@@ -142,11 +142,15 @@ const FuturisticEffects = () => {
       {/* Animated Background Grid */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black dark-gradient-overlay" />
       </div>
 
       {/* Scroll Animation Styles */}
       <style jsx global>{`
+        .light .dark-gradient-overlay {
+          background: none !important;
+        }
+        
         .scroll-animate {
           opacity: 0;
           transform: translateY(50px);
@@ -185,6 +189,12 @@ const FuturisticEffects = () => {
             linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
           background-size: 50px 50px;
           animation: grid-move 20s linear infinite;
+        }
+        
+        .light .bg-grid-pattern {
+          background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
         }
         
         @keyframes grid-move {
@@ -257,6 +267,14 @@ const FuturisticEffects = () => {
         
         .animate-text-reveal {
           animation: text-reveal 1s ease-out forwards;
+        }
+        
+        .scroll-progress-bg {
+          background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .light .scroll-progress-bg {
+          background: rgba(0, 0, 0, 0.05);
         }
         
         /* Neon flicker effect */

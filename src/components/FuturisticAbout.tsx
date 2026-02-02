@@ -114,7 +114,7 @@ const FuturisticAbout = () => {
                     <span className="text-text-primary font-medium">{skill.name}</span>
                     <span className="text-text-secondary text-sm font-mono">{skill.level}%</span>
                   </div>
-                  <div className="w-full bg-white/10 rounded-full h-2 overflow-hidden">
+                  <div className="w-full bg-glass-overlay rounded-full h-2 overflow-hidden">
                     <div 
                       className="h-full bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full transition-all duration-1000 ease-out"
                       style={{ 

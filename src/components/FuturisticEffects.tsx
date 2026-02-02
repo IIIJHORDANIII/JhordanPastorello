@@ -124,16 +124,17 @@ const FuturisticEffects = () => {
       </div>
 
       {/* Floating Particles */}
-      <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
+      <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden particles-container">
         {particles.map(particle => (
           <div
             key={particle.id}
-            className="absolute w-1 h-1 bg-cyan-400 rounded-full"
+            className="absolute w-1 h-1 rounded-full particle"
             style={{
               left: particle.x,
               top: particle.y,
               opacity: particle.life * 0.6,
-              boxShadow: '0 0 4px rgba(0, 212, 255, 0.8)'
+              background: 'var(--neon-cyan)',
+              boxShadow: '0 0 4px var(--neon-cyan)'
             }}
           />
         ))}
@@ -142,15 +143,11 @@ const FuturisticEffects = () => {
       {/* Animated Background Grid */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black dark-gradient-overlay" />
+        <div className="absolute inset-0 dark-gradient-overlay" style={{ background: 'linear-gradient(to bottom, transparent, var(--bg-primary))' }} />
       </div>
 
       {/* Scroll Animation Styles */}
       <style jsx global>{`
-        .light .dark-gradient-overlay {
-          background: none !important;
-        }
-        
         .scroll-animate {
           opacity: 0;
           transform: translateY(50px);

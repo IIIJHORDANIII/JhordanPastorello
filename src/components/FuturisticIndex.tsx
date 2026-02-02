@@ -9,7 +9,7 @@ import Footer from './Footer';
 
 const FuturisticIndex = () => {
   return (
-    <div className="min-h-screen bg-background text-text-primary relative overflow-x-hidden">
+    <div className="min-h-screen relative overflow-x-hidden" style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
       {/* Global Effects */}
       <FuturisticEffects />
       
@@ -30,16 +30,16 @@ const FuturisticIndex = () => {
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;900&family=Inter:wght@400;500;600;700;900&display=swap');
         
         :root {
-          --background: var(--bg-primary);
-          --text-primary: var(--text-primary);
-          --text-secondary: var(--text-secondary);
-          --accent-cyan: var(--neon-cyan);
-          --accent-purple: var(--neon-purple);
-          --accent-orange: var(--neon-orange);
+          --accent-cyan: #00D4FF;
+          --accent-purple: #7C3AED;
+          --accent-orange: #FF6B35;
           --accent-green: #00FF88;
         }
         
         .light {
+          --accent-cyan: #00B8E6;
+          --accent-purple: #8B5CF6;
+          --accent-orange: #FF7A4D;
           --accent-green: #00CC6A;
         }
         
@@ -118,7 +118,7 @@ const FuturisticIndex = () => {
         
         /* Utility classes */
         .bg-background {
-          background: var(--background);
+          background: var(--bg-primary);
         }
         
         .text-text-primary {

@@ -379,11 +379,11 @@
 
 /* Theme-aware background utilities */
 .bg-glass-overlay {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .light .bg-glass-overlay {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.03);
 }
 
 .bg-glass-overlay-light {
@@ -400,6 +400,25 @@
 
 .light .border-glass-overlay {
   border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Text colors for theme */
+.text-text-primary {
+  color: var(--text-primary);
+}
+
+.text-text-secondary {
+  color: var(--text-secondary);
+}
+
+.placeholder-text-secondary::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+/* Background for select options */
+.bg-bg-primary {
+  background-color: var(--bg-primary);
 }
 
 /* Override Tailwind bg-white/ classes for light theme */
@@ -464,4 +483,50 @@
   33% { content: '..'; }
   66% { content: '...'; }
   100% { content: '.'; }
+}
+
+/* Fix for light theme backgrounds */
+html.light body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.light .glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.light .glass-card:hover {
+  border-color: var(--neon-cyan);
+}
+
+/* Ensure proper text colors in light mode */
+.light .text-text-primary,
+.light h1,
+.light h2,
+.light h3,
+.light h4 {
+  color: var(--text-primary);
+}
+
+.light .text-text-secondary,
+.light p {
+  color: var(--text-secondary);
+}
+
+/* Fix background blur effects in light mode */
+.light .blur-3xl {
+  opacity: 0.3 !important;
+}
+
+/* Ensure neon button works in light mode */
+.light .neon-button {
+  border-color: var(--neon-cyan);
+  color: var(--neon-cyan);
+}
+
+.light .neon-button:hover {
+  background: var(--neon-cyan);
+  color: #fff;
 }

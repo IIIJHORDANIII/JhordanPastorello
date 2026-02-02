@@ -220,7 +220,7 @@ const FuturisticCTA = () => {
           <div className="space-y-8">
             <div className="glass-card p-8 flex flex-col" style={{ height: '600px' }}>
               {/* Chat Header */}
-              <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
+              <div className="flex items-center justify-between mb-6 pb-4 border-b border-glass-overlay">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center">
                     <MessageSquare className="w-5 h-5 text-white" />
@@ -233,7 +233,7 @@ const FuturisticCTA = () => {
                 {messages.length > 1 && (
                   <button
                     onClick={clearForm}
-                    className="p-2 hover:bg-white/10 rounded-lg transition-colors"
+                    className="p-2 hover:bg-glass-overlay rounded-lg transition-colors"
                     title="Limpar chat"
                   >
                     <X className="w-5 h-5 text-text-secondary" />
@@ -252,7 +252,7 @@ const FuturisticCTA = () => {
                       className={`max-w-[80%] rounded-lg p-4 ${
                         message.sender === 'user'
                           ? 'bg-gradient-to-br from-cyan-500 to-blue-600 text-white'
-                          : 'bg-white/10 text-text-primary border border-white/20'
+                          : 'bg-glass-overlay text-text-primary border border-glass-overlay'
                       }`}
                     >
                       <p className="font-mono text-sm whitespace-pre-wrap">{message.text}</p>
@@ -268,7 +268,7 @@ const FuturisticCTA = () => {
               </div>
 
               {/* User Info Form */}
-              <div className="space-y-4 mb-4 pb-4 border-t border-white/10 pt-4">
+              <div className="space-y-4 mb-4 pb-4 border-t border-glass-overlay pt-4">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-xs font-medium text-text-secondary mb-2 font-mono">
@@ -282,7 +282,7 @@ const FuturisticCTA = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-3 py-2 bg-white/5 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all duration-300 font-mono text-sm"
+                      className="w-full px-3 py-2 bg-glass-overlay border border-glass-overlay rounded-lg text-text-primary placeholder-text-secondary focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all duration-300 font-mono text-sm"
                       placeholder="Seu nome"
                     />
                   </div>
@@ -299,7 +299,7 @@ const FuturisticCTA = () => {
                       value={formData.phone}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-3 py-2 bg-white/5 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all duration-300 font-mono text-sm"
+                      className="w-full px-3 py-2 bg-glass-overlay border border-glass-overlay rounded-lg text-text-primary placeholder-text-secondary focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all duration-300 font-mono text-sm"
                       placeholder="(00) 00000-0000"
                     />
                   </div>
@@ -315,11 +315,11 @@ const FuturisticCTA = () => {
                     name="service"
                     value={formData.service}
                     onChange={handleInputChange}
-                    className="w-full px-3 py-2 bg-white/5 border border-white/20 rounded-lg text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all duration-300 font-mono text-sm"
+                    className="w-full px-3 py-2 bg-glass-overlay border border-glass-overlay rounded-lg text-text-primary focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all duration-300 font-mono text-sm"
                   >
-                    <option value="" className="bg-gray-900">Selecione um serviço</option>
+                    <option value="" className="bg-bg-primary text-text-primary">Selecione um serviço</option>
                     {services.map(service => (
-                      <option key={service} value={service} className="bg-gray-900">
+                      <option key={service} value={service} className="bg-bg-primary text-text-primary">
                         {service}
                       </option>
                     ))}
@@ -327,7 +327,6 @@ const FuturisticCTA = () => {
                 </div>
               </div>
 
-              {/* Message Input */}
               <div className="flex gap-2">
                 <textarea
                   value={currentMessage}
@@ -336,7 +335,7 @@ const FuturisticCTA = () => {
                   placeholder={isFormComplete ? "Digite sua mensagem..." : "Preencha nome e telefone primeiro"}
                   disabled={!isFormComplete}
                   rows={2}
-                  className="flex-1 px-4 py-3 bg-white/5 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all duration-300 resize-none font-mono text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex-1 px-4 py-3 bg-glass-overlay border border-glass-overlay rounded-lg text-text-primary placeholder-text-secondary focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all duration-300 resize-none font-mono text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                 />
                 <button
                   onClick={handleSendMessage}

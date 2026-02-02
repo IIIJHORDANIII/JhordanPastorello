@@ -91,7 +91,7 @@ const FuturisticServices = () => {
                 {service.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 text-xs font-mono bg-white/10 text-text-secondary rounded-full border border-white/20"
+                    className="px-3 py-1 text-xs font-mono bg-glass-overlay text-text-secondary rounded-full border border-glass-overlay"
                   >
                     {tag}
                   </span>

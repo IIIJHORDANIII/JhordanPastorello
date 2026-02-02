@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
+import { Sun, Moon } from 'lucide-react';
+import { useTheme } from '@/hooks/use-theme';
 
 const SideNavigation = () => {
   const [activeSection, setActiveSection] = useState('hero');
   const [isVisible, setIsVisible] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const sections = [
     { id: 'hero', label: 'Início' },
@@ -50,17 +53,58 @@ const SideNavigation = () => {
   };
 
   return (
-    <nav className={`side-nav ${isVisible ? 'visible' : ''}`}>
-      {sections.map((section) => (
-        <div
-          key={section.id}
-          className={`nav-dot ${activeSection === section.id ? 'active' : ''}`}
-          data-label={section.label}
-          onClick={() => scrollToSection(section.id)}
-        />
-      ))}
+    <>
+      {/* Theme Toggle Button - Fixed position */}
+      <button
+        onClick={toggleTheme}
+        className="theme-toggle-btn"
+        aria-label="Toggle theme"
+      >
+        {theme === 'dark' ? (
+          <Sun className="w-5 h-5" />
+        ) : (
+          <Moon className="w-5 h-5" />
+        )}
+      </button>
+
+      <nav className={`side-nav ${isVisible ? 'visible' : ''}`}>
+        {sections.map((section) => (
+          <div
+            key={section.id}
+            className={`nav-dot ${activeSection === section.id ? 'active' : ''}`}
+            data-label={section.label}
+            onClick={() => scrollToSection(section.id)}
+          />
+        ))}
+      </nav>
       
       <style jsx>{`
+        .theme-toggle-btn {
+          position: fixed;
+          top: 24px;
+          right: 24px;
+          z-index: 1000;
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          background: var(--glass-bg);
+          backdrop-filter: blur(20px);
+          border: 1px solid var(--glass-border);
+          color: var(--text-primary);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+        
+        .theme-toggle-btn:hover {
+          background: var(--neon-cyan);
+          color: var(--bg-primary);
+          box-shadow: var(--shadow-neon);
+          transform: scale(1.1);
+        }
+        
         .side-nav {
           position: fixed;
           left: 0;
@@ -118,9 +162,16 @@ const SideNavigation = () => {
           .side-nav {
             display: none;
           }
+          
+          .theme-toggle-btn {
+            top: 16px;
+            right: 16px;
+            width: 40px;
+            height: 40px;
+          }
         }
       `}</style>
-    </nav>
+    </>
   );
 };
 
